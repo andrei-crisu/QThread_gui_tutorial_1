@@ -7,7 +7,12 @@ class MyThread : public QThread
 {
     Q_OBJECT
 public:
-    MyThread();
+    explicit MyThread(QObject *parent=0);
+    void run();
+    bool stop;
+signals:
+    void NumberChanged(int);
+public slots:
 };
 
 #endif // MYTHREAD_H
