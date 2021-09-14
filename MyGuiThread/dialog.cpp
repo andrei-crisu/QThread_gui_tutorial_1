@@ -1,5 +1,6 @@
 #include "dialog.h"
 #include "ui_dialog.h"
+#include"controller.h"
 
 Dialog::Dialog(QWidget *parent)
     : QDialog(parent)
@@ -23,15 +24,26 @@ void Dialog::onNumberChanged(int number)
 
 
 void Dialog::on_start_clicked()
-{
+{/*
     //started
     mThread->start();
+    ui->start->setEnabled(false);*/
+    Controller * ctrl=new Controller();
+    delete ctrl;
+
 }
 
 
 void Dialog::on_stop_clicked()
 {
-    //stopped
-    mThread->stop=true;
+//    //stopped
+//    mThread->stop=true;
+}
+
+
+void Dialog::on_pushButton_clicked()
+{
+//    //resumed
+//    mThread->stop=true;
 }
 

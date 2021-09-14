@@ -29,6 +29,7 @@ public:
     QLabel *label;
     QSpacerItem *horizontalSpacer;
     QPushButton *start;
+    QPushButton *pushButton;
     QPushButton *stop;
     QSpacerItem *verticalSpacer;
 
@@ -36,7 +37,7 @@ public:
     {
         if (Dialog->objectName().isEmpty())
             Dialog->setObjectName(QString::fromUtf8("Dialog"));
-        Dialog->resize(400, 200);
+        Dialog->resize(614, 259);
         QSizePolicy sizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
         sizePolicy.setHorizontalStretch(0);
         sizePolicy.setVerticalStretch(0);
@@ -67,6 +68,11 @@ public:
 
         horizontalLayout->addWidget(start);
 
+        pushButton = new QPushButton(Dialog);
+        pushButton->setObjectName(QString::fromUtf8("pushButton"));
+
+        horizontalLayout->addWidget(pushButton);
+
         stop = new QPushButton(Dialog);
         stop->setObjectName(QString::fromUtf8("stop"));
         stop->setMinimumSize(QSize(80, 0));
@@ -91,6 +97,7 @@ public:
         Dialog->setWindowTitle(QCoreApplication::translate("Dialog", "Dialog", nullptr));
         label->setText(QCoreApplication::translate("Dialog", "Number", nullptr));
         start->setText(QCoreApplication::translate("Dialog", "Start", nullptr));
+        pushButton->setText(QCoreApplication::translate("Dialog", "Resume", nullptr));
         stop->setText(QCoreApplication::translate("Dialog", "Stop", nullptr));
     } // retranslateUi
 
